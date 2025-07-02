@@ -1,0 +1,187 @@
+/* =======================================================
+   1. RESET & ROOT
+   ======================================================= */
+:root {
+  --brand: #000;
+  --accent: #5d5dff;
+  --border: #d1d1d1;
+  --radius: 14px;
+  --gap: 1rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =======================================================
+   2. LAYOUT HELPERS
+   ======================================================= */
+.container {
+  max-width: 1024px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;  /* Smaller padding */
+  font-size: 0.85rem;      /* Smaller text */
+  margin-top: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+}
+
+
+/* =======================================================
+   3. NAVBAR
+   ======================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  }
+
+/* =======================================================
+   4. PRODUCT GRID
+   ======================================================= */
+.section-title {
+  text-align: center;
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* mobile default */
+  gap: var(--gap);
+  margin-bottom: 2rem;
+}
+
+/* Breakpoints: 3‑up @ ≥ 768px, 4‑up @ ≥ 1024px */
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* =======================================================
+   5. PRODUCT CARD
+   ======================================================= */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 8%);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin: 0.5rem 0 0.25rem;
+}
+.price {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* =======================================================
+   6. FOOTER
+   ======================================================= */
+.footer {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid var(--border);
+}
+
+/* =======================================================
+   7. SUCCESS PAGE
+   ======================================================= */
+.success-page {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.success-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  width: min(90%, 380px);
+  text-align: center;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+}
+
+.checkmark {
+  font-size: 3.5rem;
+  color: #29a745;    /* green tick */
+  margin: 0.5rem 0;
+}
+
+.success-card h2 {
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.success-card p {
+  margin-top: 0.5rem;
+}
+
+.order-id {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.delivery {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
